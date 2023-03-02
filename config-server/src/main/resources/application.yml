@@ -1,0 +1,19 @@
+server:
+  port: 8701
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        git:
+          # 这里填写的是本地仓库地址，远程仓库直接填写远程仓库地址 http://git...
+          # * http://localhost:8701/{服务名称}/{环境}/{Git分支}
+          # * http://localhost:8701/{Git分支}/{服务名称}-{环境}.yml
+          uri: file://D:/360Downloads/桌面/java/test
+          # 默认分支设定为你自己本地或是远程分支的名称
+          default-label: main
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8801/eureka, http://localhost:8802/eureka

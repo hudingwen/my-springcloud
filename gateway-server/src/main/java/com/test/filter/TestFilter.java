@@ -24,8 +24,9 @@ public class TestFilter implements GlobalFilter, Ordered {
             //将ServerWebExchange向过滤链的下一级传递（跟JavaWeb中介绍的过滤器其实是差不多的）
             return chain.filter(exchange);
         }else {
+            return chain.filter(exchange);
             //直接在这里不再向下传递，然后返回响应
-            return exchange.getResponse().setComplete();
+            //return exchange.getResponse().setComplete();
         }
     }
 
